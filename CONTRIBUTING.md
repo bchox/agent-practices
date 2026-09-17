@@ -6,7 +6,7 @@ Thanks for improving Agent Practices. Please search existing issues first and op
 
 1. Create a focused branch from `main`.
 2. Make the smallest coherent change and update related documentation or examples.
-3. Run `./scripts/check.sh` (or the equivalent checks you add).
+3. Run `./scripts/check.sh && ./scripts/test.sh` (or the equivalent checks you add).
 4. Open a pull request explaining the problem, approach, and validation.
 
 Guidance must be concrete, tool-agnostic where possible, and safe by default. Do not add vendor marketing, proprietary material, secrets, or instructions that bypass review and testing.

@@ -15,3 +15,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check required project files
         run: ./scripts/check.sh
+      - name: Test adoption workflow
+        run: ./scripts/test.sh

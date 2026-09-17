@@ -14,7 +14,7 @@ Maintain portable, high-signal guidance for humans and coding agents. This repos
 
 ## Validation
 
-Run `./scripts/check.sh` before proposing a change. It checks required files, Markdown links where available, and trailing whitespace. If a check cannot run, say why in the pull request.
+Run `./scripts/check.sh` before proposing a change. It checks required files, skill metadata, template coverage, executable helpers, and trailing whitespace. If a check cannot run, say why in the pull request.
 
 ## Review bar
 
