@@ -1,17 +1,13 @@
 ---
 name: coding-best-practices
-description: Implement or refactor application code with focused scope, local architectural consistency, and proportional validation.
+description: Use when implementing or refactoring application code in this repo.
 ---
 
 # Coding best practices
 
-Use this skill when implementing or refactoring code. First identify the local architecture, public interfaces, and existing patterns. Make the smallest change that satisfies the agreed requirement. Keep behavior, types, error handling, and observability consistent with adjacent code.
+1. Read the local architecture and neighboring files. Copy existing patterns; do not invent a second style.
+2. Make the smallest change that satisfies the agreed requirement. Do not guess product behavior—stop and ask.
+3. Preserve public interfaces unless the request changes them. Prefer existing dependencies.
+4. Delete dead paths you created. Add focused tests. Run the commands in `AGENTS.md`.
 
-Before finishing, remove dead paths created by the change, add focused tests, and run the repository's documented checks. Flag ambiguity instead of guessing about product behavior.
-
-## Decision points
-
-- Preserve public behavior unless the request explicitly changes it.
-- Prefer existing dependencies and abstractions unless they are the source of the problem.
-- Treat generated files as outputs: change their source and regenerate them.
-- Document migrations and compatibility breaks where consumers will see them.
+Done when the behavior change is covered by a test and the documented checks pass.

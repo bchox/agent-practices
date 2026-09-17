@@ -5,11 +5,11 @@ Each skill is a directory containing `SKILL.md`. Its YAML frontmatter makes disc
 ```yaml
 ---
 name: focused-skill-name
-description: What the skill does and the concrete requests that should activate it.
+description: Use when <the request that should load this skill>.
 ---
 ```
 
-The body should contain only guidance that changes decisions: important constraints, a useful workflow, and links to conditional references. Assume the agent already understands ordinary software development.
+Start the description with `Use when`. End the body with a `Done when` line. The rest is numbered steps that change decisions. Assume ordinary software skill.
 
 Use `references/` for substantial detail needed only in certain modes, `scripts/` for deterministic repeated operations, and `assets/` for material copied into outputs. Do not add empty scaffolding.
 

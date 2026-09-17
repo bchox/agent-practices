@@ -1,12 +1,13 @@
 ---
 name: debugging
-description: Diagnose reproducible software failures, regressions, crashes, or incorrect behavior before proposing a fix.
+description: Use when diagnosing a failure, crash, regression, or wrong result before fixing.
 ---
 
 # Debugging
 
-Reproduce the smallest version of the failure and record the actual and expected behavior. Trace evidence through logs, tests, call sites, and recent changes; distinguish the root cause from downstream symptoms.
+1. Reproduce the smallest failing case. Write actual vs expected.
+2. Trace evidence (logs, tests, recent diffs). Separate root cause from symptoms.
+3. Change one variable at a time. Add temporary logs only if you lack evidence; remove them unless they belong in ops.
+4. If the request is diagnosis-only, stop at the cause. If a fix is in scope, add a regression test first.
 
-Change one meaningful variable at a time. Add temporary instrumentation only when existing evidence is insufficient, and remove it before finishing unless it has lasting operational value.
-
-Do not implement a fix when the request is diagnosis-only. When a fix is in scope, add a regression test and verify both the focused scenario and the relevant broader suite.
+Done when the cause is named with evidence, not a guess.

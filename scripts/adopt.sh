@@ -75,4 +75,6 @@ for skill_dir in "$repo_root"/skills/*; do
   cp -R "$skill_dir"/. "$skills_target/$skill_name/"
 done
 
-echo 'Installed Agent Practices. Replace every template placeholder before committing.'
+echo 'Installed Agent Practices.'
+echo 'Next: fill every <placeholder> in AGENTS.md, delete skills you will not use, then run a real agent task.'
+"$script_dir/placeholders.sh" "$target" || true

@@ -1,12 +1,13 @@
 ---
 name: dependency-management
-description: Add, remove, or update software dependencies with compatibility, supply-chain, lockfile, and migration checks.
+description: Use when adding, removing, upgrading, or pinning a package or lockfile.
 ---
 
 # Dependency management
 
-Confirm the dependency is necessary and compatible with the project's runtime and license policy. Prefer a maintained, narrowly scoped package over duplicating a large framework or adding an unmaintained convenience dependency.
+1. Confirm the package is necessary, maintained, and compatible with runtime and license rules.
+2. Use this repo's package manager. Update the lockfile in the same change.
+3. Read migration notes for major upgrades. Review install scripts and surprising transitive jumps.
+4. Run focused tests, the required suite, and a production build if bundling or deploy is affected.
 
-Use the repository's package manager, update the lockfile in the same change, and review install scripts and major transitive changes. Read the upstream release and migration notes for major upgrades. Run the focused tests, full required suite, and a production build when the dependency affects bundling or deployment.
-
-Never expose registry credentials or weaken integrity checks to complete an installation.
+Done when the lockfile matches the manifest and no registry credentials leaked.

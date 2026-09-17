@@ -1,12 +1,12 @@
 ---
 name: code-review
-description: Review a proposed code change for concrete correctness, security, regression, maintainability, testing, and documentation risks.
+description: Use when reviewing a PR, diff, or proposed patch for merge risk.
 ---
 
 # Code review
 
-Review for correctness, security, regressions, maintainability, test coverage, and documentation—not style preferences alone. Read the surrounding code and confirm that the change's stated outcome is actually achieved.
+1. Read the stated intent, then the full diff and surrounding call sites. Confirm the change actually does what it claims.
+2. Rank findings: correctness, security, regressions, missing tests, docs that now lie. Skip style nits that a formatter owns.
+3. Each finding names file, risk, and a fix the author can apply. If nothing blocks merge, say so and list residual gaps.
 
-Prioritize findings by impact. Each finding should name the concrete risk, affected location, and a practical remedy. If no blocking issue exists, summarize residual risks and validation gaps.
-
-Do not report hypothetical style concerns as defects. Verify that a reported issue is introduced or exposed by the change and is actionable for the author.
+Done when every blocking issue is concrete and you have either approved or requested specific changes.

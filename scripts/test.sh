@@ -22,4 +22,15 @@ fi
 ./scripts/adopt.sh --target "$target" --template python --force
 grep -q 'Python guide' "$target/AGENTS.md"
 
+./scripts/placeholders.sh "$target" | grep -q '<project-name>'
+if ./scripts/placeholders.sh --strict "$target" >/dev/null 2>&1; then
+  echo 'placeholders --strict should fail on an unfilled template.' >&2
+  exit 1
+fi
+
+filled="$test_root/filled"
+mkdir "$filled"
+cp examples/minimal-repository/AGENTS.md "$filled/AGENTS.md"
+./scripts/placeholders.sh --strict "$filled"
+
 echo 'Adoption tests passed.'

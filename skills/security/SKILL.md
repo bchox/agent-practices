@@ -1,12 +1,13 @@
 ---
 name: security
-description: Review or implement changes involving trust boundaries, authentication, authorization, secrets, dependencies, or sensitive data.
+description: Use when the change touches auth, secrets, trust boundaries, or sensitive data.
 ---
 
 # Security
 
-Treat all external input as untrusted. Avoid logging secrets or personal data, validate authorization at the server boundary, and use least privilege. Do not commit credentials, tokens, production exports, or private URLs.
+1. Treat all external input as untrusted. Authorize on the server, not the client.
+2. Never commit credentials, tokens, production dumps, or private URLs. Do not log secrets.
+3. For auth, permission, or data-handling changes, name the threat and add a targeted test or review note.
+4. Report suspected vulns privately per `SECURITY.md`. Do not weaken controls to green a test.
 
-For dependency, authentication, data-handling, or permission changes, identify the threat model and include targeted tests or review notes. Escalate suspected vulnerabilities through the project's private reporting channel.
-
-Never weaken authentication, authorization, transport security, input validation, or auditability merely to make a failing test pass.
+Done when new trust-boundary behavior is explicit and untrusted input cannot skip checks.

@@ -1,12 +1,13 @@
 ---
 name: git-workflow
-description: Prepare focused Git changes, commits, branches, and pull requests while preserving unrelated work and shared history.
+description: Use when branching, committing, or opening a pull request for this change.
 ---
 
 # Git workflow
 
-Use a focused branch and keep commits coherent. Inspect the working tree before editing; preserve unrelated user changes. Never force-push shared branches, rewrite history, or run destructive Git commands without explicit approval.
+1. Inspect the working tree first. Do not clobber unrelated user edits.
+2. Use a focused branch. Commits are coherent; subject is imperative and true.
+3. Review the diff for secrets, generated junk, and drive-by formatting.
+4. Do not force-push shared branches, rewrite published history, push, merge, or tag unless asked.
 
-Before opening a pull request, review the diff for scope, generated files, secrets, and accidental formatting changes. Use an imperative commit subject that states the change.
-
-Do not create remote branches, push, merge, tag, or publish a release unless the user requested the corresponding external action.
+Done when the PR diff matches the requested scope and nothing private is in it.
