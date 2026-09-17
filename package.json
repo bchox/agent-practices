@@ -1,0 +1,22 @@
+{
+  "name": "agent-practices",
+  "version": "0.4.0",
+  "description": "Portable, practical repository guidance for AI-assisted software development.",
+  "bin": {
+    "agent-practices": "./scripts/init.sh"
+  },
+  "files": [
+    "scripts",
+    "skills",
+    "templates",
+    "catalog.json",
+    "catalog.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchox/agent-practices.git"
+  },
+  "license": "MIT"
+}

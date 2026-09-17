@@ -31,6 +31,8 @@ while IFS= read -r file; do
 done
 
 test -x scripts/adopt.sh || { echo 'scripts/adopt.sh must be executable.' >&2; exit 1; }
+test -x scripts/init.sh || { echo 'scripts/init.sh must be executable.' >&2; exit 1; }
+test -x scripts/init.py || { echo 'scripts/init.py must be executable.' >&2; exit 1; }
 test -x scripts/check.sh || { echo 'scripts/check.sh must be executable.' >&2; exit 1; }
 test -x scripts/test.sh || { echo 'scripts/test.sh must be executable.' >&2; exit 1; }
 test -x scripts/placeholders.sh || { echo 'scripts/placeholders.sh must be executable.' >&2; exit 1; }

@@ -2,7 +2,25 @@
 
 Adopt the smallest useful subset and make it **true** for your repository. Empty placeholders are worse than no contract.
 
-## 1. Choose a template
+## 1. Adopt a contract
+
+### Automatic setup (recommended)
+
+Use `scripts/init.sh` to auto-detect your project stack (TypeScript, Python, Android, Monorepo, Infrastructure, or Documentation), scrape existing test and lint scripts, and pre-populate commands:
+
+```sh
+./scripts/init.sh --target /path/to/project
+```
+
+Pass `--yes` for non-interactive adoption (or `--dry-run` to preview):
+
+```sh
+./scripts/init.sh --target /path/to/project --yes
+```
+
+### Manual adoption by template
+
+If you prefer to explicitly choose a profile without auto-detection:
 
 - `generic` — any repo
 - `kotlin-android` — Android / Kotlin

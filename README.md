@@ -13,9 +13,23 @@ An agent finds `AGENTS.md`, runs **your** lint/test commands, stays out of the w
 
 ## Install into a project
 
+### Quick start (auto-detect stack and scrape scripts)
+
 ```sh
 git clone --depth 1 https://github.com/bchox/agent-practices.git
 cd agent-practices
+./scripts/init.sh --target /path/to/your-project
+```
+
+Pass `--yes` for non-interactive adoption, or `--dry-run` to preview:
+
+```sh
+./scripts/init.sh --target /path/to/your-project --yes
+```
+
+### Manual adoption with template selection
+
+```sh
 ./scripts/adopt.sh --target /path/to/your-project --template typescript --dry-run
 ./scripts/adopt.sh --target /path/to/your-project --template typescript
 ```
@@ -39,6 +53,7 @@ Filled example: [`examples/minimal-repository/AGENTS.md`](examples/minimal-repos
 | `AGENTS.md` | Commands, map, rules, done criteria |
 | `skills/` | Ten task skills with **Use when** + **Done when** |
 | `templates/` | Starting contracts for stacks and project profiles |
+| `scripts/init.sh` | Single-command adoption with auto-detection and script scraping |
 | `scripts/adopt.sh` | Safe copy + dry-run |
 | `scripts/placeholders.sh` | Fail CI if you still shipped `<lint-command>` |
 | `catalog.json` | Versioned index for tools and integrations |
