@@ -4,6 +4,12 @@ All notable changes are documented here. The project follows [Semantic Versionin
 
 ## [Unreleased]
 
+### Added
+
+- `scripts/init.sh` and `scripts/init.py` for single-command adoption with stack auto-detection, script scraping, and an interactive setup wizard
+- Automatic substitution of `<project-name>`, `<test-command>`, `<lint-command>`, `<typecheck-command>`, `<format-check-command>`, `<install-command>`, and `<build-command>` placeholders
+- `package.json` manifest enabling `agent-practices` CLI distribution via package managers
+
 ## [0.4.0] - 2026-09-17
 
 ### Added
