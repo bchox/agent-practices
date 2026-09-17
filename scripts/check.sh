@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-required_files='README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md AGENTS.md CHANGELOG.md ROADMAP.md VERSION docs/architecture.md docs/conventions.md docs/getting-started.md docs/compatibility.md docs/skill-authoring.md'
+required_files='README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md GOVERNANCE.md SECURITY.md SUPPORT.md AGENTS.md CHANGELOG.md ROADMAP.md VERSION catalog.json catalog.schema.json docs/adoption-reports.md docs/architecture.md docs/conventions.md docs/getting-started.md docs/compatibility.md docs/skill-authoring.md'
 for file in $required_files; do
   test -f "$file" || { echo "Missing required file: $file" >&2; exit 1; }
 done
@@ -17,8 +17,9 @@ for skill_dir in skills/*; do
   grep -q '^Done when ' "$skill_file" || { echo "Missing Done when line: $skill_file" >&2; exit 1; }
 done
 
-for template in generic kotlin-android typescript python; do
-  test -f "templates/$template/AGENTS.md" || { echo "Missing template: $template" >&2; exit 1; }
+for template_dir in templates/*; do
+  template=$(basename "$template_dir")
+  test -f "$template_dir/AGENTS.md" || { echo "Missing AGENTS.md: $template" >&2; exit 1; }
 done
 
 find . -path './.git' -prune -o \( -name '*.md' -o -name '*.yml' -o -name '*.yaml' \) -type f -print |
@@ -33,5 +34,8 @@ test -x scripts/adopt.sh || { echo 'scripts/adopt.sh must be executable.' >&2; e
 test -x scripts/check.sh || { echo 'scripts/check.sh must be executable.' >&2; exit 1; }
 test -x scripts/test.sh || { echo 'scripts/test.sh must be executable.' >&2; exit 1; }
 test -x scripts/placeholders.sh || { echo 'scripts/placeholders.sh must be executable.' >&2; exit 1; }
+test -x scripts/catalog.py || { echo 'scripts/catalog.py must be executable.' >&2; exit 1; }
+
+./scripts/catalog.py --check
 
 echo 'Repository checks passed.'

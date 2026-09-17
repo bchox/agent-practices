@@ -4,6 +4,22 @@ All notable changes are documented here. The project follows [Semantic Versionin
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-17
+
+### Added
+
+- Selective skill installation and discoverable template/skill listing
+- Documentation, infrastructure, and monorepo project profiles
+- Database-change and release-management skills
+- A generated, versioned JSON catalog and schema for tooling
+- A layered monorepo example showing scoped `AGENTS.md` contracts
+- Public governance, support boundaries, CODEOWNERS, and adoption reports
+
+### Changed
+
+- Template discovery is dynamic, so new profiles do not require installer code changes
+- CI pins third-party actions to immutable commits
+
 ## [0.3.0] - 2026-09-17
 
 ### Added
@@ -38,7 +54,8 @@ All notable changes are documented here. The project follows [Semantic Versionin
 
 - Initial repository contract, six skills, four templates, examples, community files, and CI
 
-[Unreleased]: https://github.com/bchox/agent-practices/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/bchox/agent-practices/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/bchox/agent-practices/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/bchox/agent-practices/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/bchox/agent-practices/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/bchox/agent-practices/releases/tag/v0.1.0

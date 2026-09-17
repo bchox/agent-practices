@@ -1,0 +1,87 @@
+{
+  "$schema": "./catalog.schema.json",
+  "schemaVersion": 1,
+  "projectVersion": "0.4.0",
+  "skills": [
+    {
+      "name": "code-review",
+      "description": "Use when reviewing a PR, diff, or proposed patch for merge risk.",
+      "path": "skills/code-review/SKILL.md"
+    },
+    {
+      "name": "coding-best-practices",
+      "description": "Use when implementing or refactoring application code in this repo.",
+      "path": "skills/coding-best-practices/SKILL.md"
+    },
+    {
+      "name": "database-changes",
+      "description": "Use when changing a database schema, migration, query contract, index, or persisted data shape.",
+      "path": "skills/database-changes/SKILL.md"
+    },
+    {
+      "name": "debugging",
+      "description": "Use when diagnosing a failure, crash, regression, or wrong result before fixing.",
+      "path": "skills/debugging/SKILL.md"
+    },
+    {
+      "name": "dependency-management",
+      "description": "Use when adding, removing, upgrading, or pinning a package or lockfile.",
+      "path": "skills/dependency-management/SKILL.md"
+    },
+    {
+      "name": "documentation",
+      "description": "Use when setup, APIs, config, or contributor workflow changed and docs must match.",
+      "path": "skills/documentation/SKILL.md"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Use when branching, committing, or opening a pull request for this change.",
+      "path": "skills/git-workflow/SKILL.md"
+    },
+    {
+      "name": "release-management",
+      "description": "Use when preparing a version, changelog, tag, release artifact, or public software release.",
+      "path": "skills/release-management/SKILL.md"
+    },
+    {
+      "name": "security",
+      "description": "Use when the change touches auth, secrets, trust boundaries, or sensitive data.",
+      "path": "skills/security/SKILL.md"
+    },
+    {
+      "name": "testing",
+      "description": "Use when adding, repairing, selecting, or running tests for a behavior change.",
+      "path": "skills/testing/SKILL.md"
+    }
+  ],
+  "templates": [
+    {
+      "name": "documentation",
+      "path": "templates/documentation/AGENTS.md"
+    },
+    {
+      "name": "generic",
+      "path": "templates/generic/AGENTS.md"
+    },
+    {
+      "name": "infrastructure",
+      "path": "templates/infrastructure/AGENTS.md"
+    },
+    {
+      "name": "kotlin-android",
+      "path": "templates/kotlin-android/AGENTS.md"
+    },
+    {
+      "name": "monorepo",
+      "path": "templates/monorepo/AGENTS.md"
+    },
+    {
+      "name": "python",
+      "path": "templates/python/AGENTS.md"
+    },
+    {
+      "name": "typescript",
+      "path": "templates/typescript/AGENTS.md"
+    }
+  ]
+}

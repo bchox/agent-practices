@@ -2,6 +2,8 @@
 
 Thanks for improving Agent Practices. Please search existing issues first and open an issue for substantial proposals before investing in a large change.
 
+Evidence from a real repository is especially valuable. See [Adoption reports](docs/adoption-reports.md) before sharing sanitized results.
+
 ## Contribution flow
 
 1. Create a focused branch from `main`.

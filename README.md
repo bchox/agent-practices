@@ -20,7 +20,13 @@ cd agent-practices
 ./scripts/adopt.sh --target /path/to/your-project --template typescript
 ```
 
-Templates: `generic` · `typescript` · `python` · `kotlin-android`
+List available profiles and skills, then install only what the project will use:
+
+```sh
+./scripts/adopt.sh --list
+./scripts/adopt.sh --target /path/to/your-project --template infrastructure \
+  --skills security,code-review,dependency-management
+```
 
 The helper will not overwrite an existing `AGENTS.md` unless you pass `--force`. After copy it lists leftover `<placeholders>`. Fill those before you commit. Drop unused skills under `.agents/skills/`.
 
@@ -31,10 +37,11 @@ Filled example: [`examples/minimal-repository/AGENTS.md`](examples/minimal-repos
 | Piece | Job |
 | --- | --- |
 | `AGENTS.md` | Commands, map, rules, done criteria |
-| `skills/` | Eight task skills with **Use when** + **Done when** |
-| `templates/` | Starting contracts per stack |
+| `skills/` | Ten task skills with **Use when** + **Done when** |
+| `templates/` | Starting contracts for stacks and project profiles |
 | `scripts/adopt.sh` | Safe copy + dry-run |
 | `scripts/placeholders.sh` | Fail CI if you still shipped `<lint-command>` |
+| `catalog.json` | Versioned index for tools and integrations |
 
 ## Principles
 
@@ -50,8 +57,8 @@ Plain Markdown. Some tools auto-load `AGENTS.md`; others need a one-line pointer
 
 ## Status
 
-Early, usable. Next: real adopted repos, Windows notes, link checks. [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md)
+Early, usable. Next: real adoption reports, Windows support, and compatibility fixtures. [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md)
 
 ## Contributing
 
-[CONTRIBUTING.md](CONTRIBUTING.md) · [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · [SECURITY.md](SECURITY.md) · [MIT](LICENSE)
+[CONTRIBUTING.md](CONTRIBUTING.md) · [GOVERNANCE.md](GOVERNANCE.md) · [SUPPORT.md](SUPPORT.md) · [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · [SECURITY.md](SECURITY.md) · [MIT](LICENSE)

@@ -1,0 +1,51 @@
+name: Adoption report
+description: Share sanitized evidence from using Agent Practices in a real repository
+title: "[adoption]: "
+labels: [adoption]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include private source code, credentials, customer data, or internal URLs.
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template
+      options:
+        - generic
+        - documentation
+        - infrastructure
+        - kotlin-android
+        - monorepo
+        - python
+        - typescript
+        - manually assembled
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Coding agent
+      description: Product and version, if known.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What changed in practice?
+      description: Name one instruction that helped and one gap or confusing instruction.
+    validations:
+      required: true
+  - type: textarea
+    id: discovery
+    attributes:
+      label: Discovery and validation
+      description: Did the agent find the contract automatically, and which checks did it actually run?
+    validations:
+      required: true
+  - type: checkboxes
+    id: sanitized
+    attributes:
+      label: Data safety
+      options:
+        - label: I removed private code, credentials, customer data, and internal URLs.
+          required: true

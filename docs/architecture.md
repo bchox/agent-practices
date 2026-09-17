@@ -10,3 +10,5 @@ Agent Practices is a documentation-first toolkit with four layers:
 The layers intentionally depend only on Markdown conventions. A coding agent may load all or selected files; human contributors can use the same material without an agent.
 
 `scripts/adopt.sh` is a convenience layer, not a package manager. It copies a selected contract and the current skills into a target repository, makes no network requests, and refuses to replace an existing contract by default.
+
+`catalog.json` is generated from `VERSION`, skill frontmatter, and template directories. Integrations may consume it without parsing the whole repository. `catalog.schema.json` versions that public data contract; `scripts/catalog.py --check` prevents the committed catalog from drifting.
