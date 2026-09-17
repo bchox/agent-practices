@@ -13,7 +13,8 @@ for skill_dir in skills/*; do
   first_line=$(sed -n '1p' "$skill_file")
   test "$first_line" = '---' || { echo "Missing YAML frontmatter: $skill_file" >&2; exit 1; }
   grep -q "^name: $skill$" "$skill_file" || { echo "Skill name does not match directory: $skill_file" >&2; exit 1; }
-  grep -q '^description: .\+' "$skill_file" || { echo "Missing skill description: $skill_file" >&2; exit 1; }
+  grep -q '^description: Use when ' "$skill_file" || { echo "Skill description must start with 'Use when ': $skill_file" >&2; exit 1; }
+  grep -q '^Done when ' "$skill_file" || { echo "Missing Done when line: $skill_file" >&2; exit 1; }
 done
 
 for template in generic kotlin-android typescript python; do
@@ -31,5 +32,6 @@ done
 test -x scripts/adopt.sh || { echo 'scripts/adopt.sh must be executable.' >&2; exit 1; }
 test -x scripts/check.sh || { echo 'scripts/check.sh must be executable.' >&2; exit 1; }
 test -x scripts/test.sh || { echo 'scripts/test.sh must be executable.' >&2; exit 1; }
+test -x scripts/placeholders.sh || { echo 'scripts/placeholders.sh must be executable.' >&2; exit 1; }
 
 echo 'Repository checks passed.'

@@ -1,17 +1,13 @@
 ---
 name: testing
-description: Design, add, repair, or run software tests with coverage proportional to the behavior and regression risk.
+description: Use when adding, repairing, selecting, or running tests for a behavior change.
 ---
 
 # Testing
 
-Start with the smallest test that exercises the changed behavior, then run the project's required suite. Include normal behavior, failure behavior, and boundary cases appropriate to the risk. Prefer deterministic tests; do not hide failures by loosening assertions or skipping tests without a documented reason.
+1. Write the smallest test that fails for the new or broken behavior, then make it pass.
+2. Cover the happy path, one real failure path, and a boundary if the risk warrants it.
+3. Prefer deterministic tests. Do not skip or loosen assertions to hide flakes without a written reason.
+4. Run the commands in `AGENTS.md` and paste what actually ran.
 
-Report the commands run and their results in the pull request.
-
-## Test selection
-
-- Unit-test deterministic logic and error handling.
-- Use integration tests for boundaries such as storage, networking, and process interaction.
-- Add end-to-end coverage only for critical user journeys that lower-level tests cannot prove.
-- Reproduce a bug with a failing test before fixing it when practical.
+Done when the required suite passed on this change, not on memory.

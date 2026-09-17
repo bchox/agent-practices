@@ -1,29 +1,44 @@
 # Getting started
 
-Adopt the smallest useful subset and make it true for your repository.
+Adopt the smallest useful subset and make it **true** for your repository. Empty placeholders are worse than no contract.
 
 ## 1. Choose a template
 
-- `generic` for any repository
-- `kotlin-android` for Android projects
-- `typescript` for TypeScript applications and libraries
-- `python` for Python applications and packages
+- `generic` — any repo
+- `kotlin-android` — Android / Kotlin
+- `typescript` — Node/TS apps and libraries
+- `python` — Python apps and packages
 
-Run the helper from this repository:
+Git Bash or WSL on Windows. Native `cmd.exe` is untested.
 
 ```sh
 ./scripts/adopt.sh --target /path/to/project --template typescript --dry-run
 ./scripts/adopt.sh --target /path/to/project --template typescript
 ```
 
-## 2. Customize the contract
+## 2. Kill the placeholders
 
-Replace every `<placeholder>`. Document commands that work from a fresh checkout, the directories that define architectural boundaries, and any files that agents must not modify.
+Replace every `<placeholder>` with commands that work from a **fresh checkout**. Document directories agents must not touch.
 
-## 3. Select skills
+```sh
+./scripts/placeholders.sh --strict /path/to/project
+```
 
-The helper installs all skills under `.agents/skills/`. Remove skills that do not affect decisions in your project. Add repository-specific references only when they prevent repeated rediscovery.
+That command should exit 0 before you commit `AGENTS.md`.
 
-## 4. Verify with a real task
+## 3. Cut skills you will not use
 
-Ask your coding agent to make a small, reviewable change. Check whether it found the contract, ran the correct commands, respected boundaries, and reported validation clearly. Improve the guidance based on observed gaps rather than hypothetical ones.
+The helper copies all skills into `.agents/skills/`. Delete the ones that never change a decision. Keep the rest short.
+
+## 4. Prove it with one task
+
+Ask the agent for a small, reviewable change. Check:
+
+- Did it find `AGENTS.md`?
+- Did it run the real commands?
+- Did it stay in bounds?
+- Did the PR report what actually ran?
+
+Fix the contract from that failure. Do not add hypothetical rules.
+
+See [Compatibility](compatibility.md) if the tool did not load the files.

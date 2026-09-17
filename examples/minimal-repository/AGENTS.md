@@ -20,6 +20,10 @@
 - Add a regression test for every bug fix.
 - Do not commit `.env`, build output, or fixture data copied from production.
 
+## Skills
+
+After adoption, task skills live in `.agents/skills/`.
+
 ## Definition of done
 
 Run the focused test while developing, then `npm run check && npm test && npm run build` before review. Report any command that could not run and why.
